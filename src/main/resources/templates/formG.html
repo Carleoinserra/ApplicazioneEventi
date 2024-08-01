@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- Compiled and minified CSS -->
+ <link rel = "stylesheet"
+         href = "https://fonts.googleapis.com/icon?family=Material+Icons">
+      <link rel = "stylesheet"
+         href = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
+      <script type = "text/javascript"
+         src = "https://code.jquery.com/jquery-2.1.1.min.js"></script>           
+      <script src = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js">
+      </script> 
+      <script>
+         $(document).ready(function() {
+            $('select').material_select();
+         });
+      </script>
+<title>Insert title here</title>
+</head>
+<body>
+ <div class="container">
+<form action = "/submit" method = "post">
+<label>Nome</label>
+<input type = "text" name = "nome">
+<br>
+
+<hr>
+ 
+               <label>Tipologia</label>
+               <select name = "tipo">
+                  
+                  <option value = "Spettacolo">Spettacolo</option>
+                  <option value = "Corso">Corso</option>
+                 
+               </select>              
+            
+<br>
+<hr>
+<label>Prezzo</label>
+<input type = "number" name = "prezzo">
+<br>
+<label>Posti disponibili</label>
+<input type = "number" name = "posti">
+<br>
+<label>Data</label>
+<input type = "text" name = "data">
+<br>
+
+<label>Img</label>
+<input type = "text" name = "img">
+
+<input type = "submit" value = "Invia">
+
+
+</form>
+<hr>
+<label>rimuovi un prodotto dal nome</label>
+<form action = "/delete" method = "post">
+<label>Nome</label>
+<input type = "text" name = "nome">
+
+
+<input type = "submit" value = "Cancella">
+</form>
+
+<hr>
+<form action = "/show" method = "get">
+
+<input type = "submit" value = "show">
+</form>
+</div>
+</body>
+</html>

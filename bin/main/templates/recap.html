@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+ <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+ <div class="container">
+ <ul class="pagination">
+    <li class="disabled"><a href="/"><i class="material-icons">chevron_left</i></a></li>
+   
+   
+  </ul>
+
+
+<h5>Grazie per l'acquisto</h5>
+<table>
+        <thead>
+          <tr>
+              <th>Nome prodotto</th>
+              <th>Pezzi acquistati</th>
+             
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr th:each = "prod: ${lista}">
+            <td th:text="${prod.getNome()}"></td>
+            <td  th:text="${prod.getQnt()}"></td>
+           
+          </tr>
+          <tr>
+        
+        </tbody>
+      </table>
+      <h3>La somma totale da pagare è <span th:text= "${somma}"></span></h3>
+
+
+<form action = "/conferma" method = "post">
+<label>Inserisci la mail per confermare l'ordine</label>
+<input type = "text" name = "mail">
+
+<input type = "submit" value = "conferma">
+</form>
+</div>
+</body>
+</html>

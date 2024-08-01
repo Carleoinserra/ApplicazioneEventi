@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</head>
+<body>
+
+
+
+ <div class="container">
+
+
+
+  
+ 
+   <div class="row">
+    <form action = "/process" method = "post">
+   
+  <div class="card col s4" th:each = "prod: ${lista}" >
+ 
+    <div class="card-image waves-effect waves-block waves-light">
+      <img class="activator" th:src="${prod.getUrl()}">
+    </div>
+    <div class="card-content">
+      <span class="card-title activator grey-text text-darken-4" th:text="${prod.getNome()}"><i class="material-icons right">more_vert</i></span>
+      <p> <input type = "number" th:name ="qnts" value= "0"></p>
+    </div>
+    <div class="card-reveal">
+      <span class="card-title grey-text text-darken-4" th:text="${prod.getTipologia()}"><i class="material-icons right">close</i></span>
+      Prezzo prodotto  <p th:text="${prod.getPrezzo()}"></p>
+         Posti disponibili:  <p th:text="${prod.getPostiDisponibili()}"></p>
+        
+        Data evento: <p th:text="${prod.getData()}"></p>
+         Tipologia: <p th:text="${prod.getTipologia()}"></p>
+    </div>
+   
+    
+  </div>
+    </div>
+  
+    <button class="btn waves-effect waves-light column" type="submit" name="action">Acquista
+   
+  </button>
+  
+  </form>
+           
+  
+
+</body>
+</html>
